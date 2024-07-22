@@ -4,6 +4,9 @@
 :root {
     --primary: #fe2c55;
     --fw-default: 400;
+    --default-layout-header-height: 60px;
+    --default-layout-header-width: 1150px;
+    --default-layout-side-bar-width: 356px
 }
 
 html {
@@ -11,6 +14,8 @@ html {
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -18,7 +23,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 1.6rem;
     font-optical-sizing: auto;
-    font-weight: (--fw-default);
+    font-weight: var(--fw-default);
     font-style: normal;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
