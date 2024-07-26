@@ -6,7 +6,14 @@
     --fw-default: 400;
     --default-layout-header-height: 60px;
     --default-layout-header-width: 1150px;
-    --default-layout-side-bar-width: 356px
+    --default-layout-side-bar-width: 356px;
+    --border-line: rgba(255, 255, 255, 0.12) 0px 1px 1px;
+    --bg-color: rgb(18, 18, 18);
+    --text-color: rgba(255, 255, 255, 0.9);
+    --fs-default: 1.6rem;
+    --lh-default: 1.5;
+    --border-radius-btn: 92px;
+    --icon-color: rgba(255, 255, 255, 0.12);
 }
 
 html {
@@ -21,10 +28,22 @@ html {
 
 body {
     font-family: "Montserrat", sans-serif;
-    font-size: 1.6rem;
+    font-size: var(--fs-default);
     font-optical-sizing: auto;
     font-weight: var(--fw-default);
     font-style: normal;
-    line-height: 1.5;
+    line-height: var(--lh-default);
     text-rendering: optimizeSpeed;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+button, input, [tabindex] {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
 }
