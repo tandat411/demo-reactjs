@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
 import styles from './Header.module.scss';
@@ -58,7 +59,20 @@ function Header() {
             </Tippy>
 
             <div className={context('action')}>
-
+                <Button text className={context('custom-login')}>Upload</Button>
+                <Button primary disable leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                    Login
+                </Button>
+                <Button outline >Register</Button>
+                <Button rounded >Rounded button</Button>
+                {/* Dùng React router-dom để xử lý link nội bộ ở prop to */}
+                {/* <Button to="/login" target="_blank">Login</Button> */}
+                {/* Dùng prop href để xử lý link tuyệt đối ở thẻ a */}
+                {/* <Button href="https://www.google.com.vn/" target="_blank">Login</Button> */}
+                
+                
+                {/* <Button outline size="small" >Follow</Button> */}
+                {/* <Button outline size="large" >Large button</Button> */}
             </div>
             
         </div>
