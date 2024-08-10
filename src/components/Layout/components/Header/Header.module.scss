@@ -2,7 +2,9 @@
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
-
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -21,94 +23,6 @@
 
 .logo {
     display: flex;
-}
-
-.search, .search-result {
-    width: 440px;
-}
-
-.search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: var(--search-height);
-    padding-left: 16px;
-    background-color: var(--icon-color);
-    border-radius: var(--border-radius-btn);
-    border: 1.5px solid transparent;
-
-    input {
-        flex: 1;
-        height: 100%;
-        font-size: var(--fs-default);
-        background-color: transparent;
-        color: var(--text-color);
-        caret-color: var(--primary);
-    }
-
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: var(--text-color);
-    }
-
-    &:hover {
-        border-color: rgba(255, 255, 255, 0.5);
-        .search-btn {
-            color: var(--text-color);
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-    }
-
-    &:focus-within {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: calc(var(--search-height) - (var(--search-top-spacer) * 2));
-        top: var(--search-top-spacer);
-        right: var(--search-button-width);
-        background-color: var(--icon-color);
-    }
-}
-
-.search-result {
-    
-}
-
-.search-title {
-    padding: 5px 12px;
-    line-height: 18px;
-    font-size: 1.4rem;
-    color: rgba(246, 246, 246, 0.5);
-}
-
-.clear,
-.loading {
-    cursor: pointer;
-    position: absolute;
-    right: calc(var(--search-button-width) + 16px);
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.34);
-    font-size: var(--fs-default);
-    background-color: transparent;
-}
-
-.search-btn {
-    cursor: pointer;
-    color: rgba(246, 246, 246, 0.5);
-    width: var(--search-button-width);
-    height: 100%;
-    background-color: transparent;
-    border-top-right-radius: var(--border-radius-btn);
-    border-bottom-right-radius: var(--border-radius-btn);
-    font-size: 1.8rem;
-
-    &:active {
-        background-color: rgba(246, 246, 246, 0.06) !important;
-    }
 }
 
 .action {
@@ -161,5 +75,13 @@
     height: 28px;
     object-fit: cover;
     border-radius: 50%;
-    margin-left: 12px;
+    margin-left: 8px;
+}
+
+.action-link {
+    padding: 0 8px;
+}
+
+.logo-link {
+    display: flex;
 }

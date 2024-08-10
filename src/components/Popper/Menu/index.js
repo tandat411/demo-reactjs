@@ -11,7 +11,7 @@ const context = classNames.bind(styles);
 
 const defaultFunc = () => {};
 
-function Menu({ children, items = [], onChange = defaultFunc }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFunc }) {
 
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
@@ -33,6 +33,7 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
     return ( 
         <Tippy 
             interactive
+            hideOnClick={hideOnClick}
             offset={[12, 8]}
             delay={[0, 700]}
             placement='bottom-end'
@@ -44,7 +45,9 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
                                 setHistory(prev => prev.slice(0, prev.length - 1));
                             }} />
                         }
-                        {renderItems()}
+                        <div className={context('menu-body')}>
+                            {renderItems()}
+                        </div>
                     </PopperWrapper>
                 </div>
             )}

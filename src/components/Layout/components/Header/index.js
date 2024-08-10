@@ -1,10 +1,6 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
     faSignIn,
     faEllipsisVertical,
     faEarthAsia,
@@ -15,19 +11,19 @@ import {
     faCoins,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import AccountItem from '~/components/AccountItem';
 import { InboxIcon, MessagesIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import Search from '../Search';
+import { Link } from 'react-router-dom';
+import routesConfig from "~/configs/routes";
 
 const context = classNames.bind(styles);
 
@@ -38,6 +34,125 @@ const MENU_ITEMS = [
         children: {
             title: 'Language',
             data: [
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Việt Nam'
+                },
+                {
+                    code: 'fr',
+                    title: 'France'
+                },
+                ,
+                {
+                    code: 'es',
+                    title: 'Spain'
+                },
                 {
                     code: 'en',
                     title: 'English'
@@ -70,12 +185,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    useEffect(() => {
-        setSearchResult();
-    }, []);
-
     // Handle logic menu
     const handleMenuChange = (menuItem) => {
 
@@ -111,37 +220,11 @@ function Header() {
     return <header className={context('wrapper')}>
         <div className={context('inner')}>
             <div className={context('logo')}>
-                <img src={images.logo} alt='tiktok' />
+                <Link to={routesConfig.home} className={context('logo-link')} >
+                    <img src={images.logo} alt='tiktok' />
+                </Link>
             </div>
-            <HeadlessTippy 
-                interactive
-                render={attrs => (
-                    <div className={context('search-result')} tabIndex='-1' {...attrs}>
-                        <PopperWrapper>
-                            <h4 className={context('search-title')}>
-                                Accounts
-                            </h4>
-                            <AccountItem />
-                            <AccountItem />
-                            <AccountItem />
-                        </PopperWrapper>
-                    </div>
-                )} 
-            >
-                <div className={context('search')}>
-                    <input placeholder='Search accounts and videos' spellCheck={false} />
-                    
-                    <button className={context('clear')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
-
-                    <FontAwesomeIcon className={context('loading')} icon={faSpinner} />
-
-                    <button className={context('search-btn')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                </div>
-            </HeadlessTippy>
+            <Search />
 
             <div className={context('action')}>
                 {/* Check user login */}

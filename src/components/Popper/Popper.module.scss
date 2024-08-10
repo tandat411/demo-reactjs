@@ -1,4 +1,6 @@
 .wrapper {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background: var(--bg-menu);
     border-radius: 8px;
