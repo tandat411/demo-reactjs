@@ -12,7 +12,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from "~/hooks";
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
-import * as searchService from '~/apiServices/searchService';
+import * as searchService from '~/services/searchService';
 
 
 const context = classNames.bind(styles);

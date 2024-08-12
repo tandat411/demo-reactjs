@@ -1,3 +1,4 @@
+/* eslint-disable no-sparse-arrays */
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -23,7 +24,7 @@ import { InboxIcon, MessagesIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
-import routesConfig from "~/configs/routes";
+import configs from "~/configs";
 
 const context = classNames.bind(styles);
 
@@ -220,7 +221,7 @@ function Header() {
     return <header className={context('wrapper')}>
         <div className={context('inner')}>
             <div className={context('logo')}>
-                <Link to={routesConfig.home} className={context('logo-link')} >
+                <Link to={configs.routes.home} className={context('logo-link')} >
                     <img src={images.logo} alt='tiktok' />
                 </Link>
             </div>
