@@ -191,7 +191,7 @@ function Header() {
 
     };
 
-    const currentUser = true;
+    const currentUser = false;
 
     const userMenu = [
         {
