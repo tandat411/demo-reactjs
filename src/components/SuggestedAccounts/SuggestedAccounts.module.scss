@@ -1,0 +1,61 @@
+.wrapper {
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-left: calc(var(--default-layout-horizontal-spacer) * -1);
+    
+    .label {
+        color: rgba(255, 255, 255, 0.75);;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 8px;
+        line-height: 1.8rem;
+    }
+
+    .more-btn {
+        cursor: pointer;
+        padding: 8px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+.suggested-account-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 6px 6px;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.04);
+    }
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.info {
+    flex: 1;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+}
+
+.check-icon {
+    font-size: 1.4rem;
+    margin-left: 6px;
+    color: rgb(32, 213, 236);
+}
+
+.username {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+}

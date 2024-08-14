@@ -4,6 +4,7 @@ import Menu, { MenuItem } from "./Menu";
 import styles from "./Sidebar.module.scss";
 import { ExploreActiveIcon, ExploreIcon, FollowingActiveIcon, FollowingIcon, FriendsActiveIcon, FriendsIcon, HomeActiveIcon, HomeIcon, LiveActiveIcon, LiveIcon, ProfileIcon } from "~/components/Icons";
 import configs from "~/configs";
+import SuggestedAccounts from "~/components/SuggestedAccounts";
 
 const context = classNames.bind(styles);
 
@@ -70,6 +71,8 @@ function Sidebar() {
             <Menu>
                 {renderMenuItem()}
             </Menu>
+            <SuggestedAccounts label="Suggested Accounts" />
+            <SuggestedAccounts label="Following Accounts" />
         </aside>
      );
 }
